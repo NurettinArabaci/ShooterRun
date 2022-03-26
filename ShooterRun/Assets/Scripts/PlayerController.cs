@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody bulletRb;
 
-    int bulletForce = 200;
+    int bulletForce = 100;
 
     float limitX=10f;
     float xAxis;

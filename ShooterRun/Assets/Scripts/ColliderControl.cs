@@ -16,6 +16,7 @@ public class ColliderControl : MonoBehaviour
         if (other.tag=="Enemy")
         {
             objectPooling.BackToPool(transform.gameObject, "Bullet");
+            other.transform.GetChild(0).GetComponent<Animator>().SetBool("die", true);
             other.GetComponent<BoxCollider>().enabled = false;
             
         }
@@ -24,12 +25,5 @@ public class ColliderControl : MonoBehaviour
             objectPooling.BackToPool(transform.gameObject, "Bullet");
         }
     }
-    /*private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy") )
-        {
-            objectPooling.BackToPool(transform.gameObject, "Bullet");
-        }
-        
-    }*/
+    
 }
