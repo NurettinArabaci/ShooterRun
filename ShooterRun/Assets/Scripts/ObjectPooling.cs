@@ -34,7 +34,7 @@ public class ObjectPooling : MonoBehaviour
 
             for (int i = 0; i < item.size; i++)
             {
-                GameObject obj = Instantiate(item.prefab);
+                GameObject obj = Instantiate(item.prefab,transform);
                 obj.SetActive(false);
                 objectPool.Enqueue(obj);
             }
@@ -42,7 +42,7 @@ public class ObjectPooling : MonoBehaviour
             poolDict.Add(item.objectTag, objectPool);
         }
     }
-    public GameObject SpawnObject(string tag, Vector3 pos, Quaternion rot)
+    public GameObject GetSpawnObject(string tag, Vector3 pos, Quaternion rot)
     {
         if (poolDict[tag].Count <= 1)
         {
@@ -53,6 +53,7 @@ public class ObjectPooling : MonoBehaviour
             objectSpawn.SetActive(true);
             objectSpawn.transform.position = pos;
             objectSpawn.transform.rotation = rot;
+
             return objectSpawn;
         }
 
@@ -62,7 +63,7 @@ public class ObjectPooling : MonoBehaviour
             objectSpawn.SetActive(true);
             objectSpawn.transform.position = pos;
             objectSpawn.transform.rotation = rot;
-            //poolDict[tag].Enqueue(objectToSpawn);
+
             return objectSpawn;
         }
 
