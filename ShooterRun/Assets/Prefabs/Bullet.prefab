@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7990673239344103357}
   - component: {fileID: 3239167782285257057}
   - component: {fileID: -2822466650400076549}
-  - component: {fileID: 3265867673985348263}
+  - component: {fileID: 7427523645810040143}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -164,7 +164,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0.028687771
-        value: 0.43137145
+        value: 0.7599466
         inSlope: -0.2870524
         outSlope: -0.2870524
         tangentMode: 0
@@ -221,7 +221,7 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!114 &3265867673985348263
+--- !u!114 &7427523645810040143
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,6 +230,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7990673239344103358}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb4c14c852880414792e2a10f71b3371, type: 3}
+  m_Script: {fileID: 11500000, guid: f702d8e9658a14998a3baf6e2d43ee4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

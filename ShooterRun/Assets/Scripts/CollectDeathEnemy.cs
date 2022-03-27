@@ -11,12 +11,9 @@ public class CollectDeathEnemy : MonoBehaviour
     {
         if (other.tag=="DeathEnemy")
         {
-            pos = new Vector3( Random.Range(-10, 10),other.transform.position.y,transform.position.z - Random.Range(15, 25));
+            pos = new Vector3( Random.Range(-10, 10),other.transform.position.y,transform.position.z - Random.Range(0, 10));
             
-            other.tag = "Enemy";
-
-            other.GetComponent<NavMeshAgent>().enabled = true;
-            other.GetComponent<NavMeshFollow>().enabled = true;
+            BulletController.ComponentChange(other.gameObject, true,"Enemy");
 
             ObjectPooling.Instance.BackToPool(other.gameObject, "Enemy");
             ObjectPooling.Instance.GetSpawnObject("Enemy",pos, Quaternion.identity);

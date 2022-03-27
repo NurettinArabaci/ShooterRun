@@ -7,8 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     PlayerInputs playerInputs;
 
-    ObjectPooling spawnObject;
-
     GameObject bullet;
 
     Rigidbody bulletRb;
@@ -17,22 +15,19 @@ public class PlayerController : MonoBehaviour
 
     float limitX=11f;
     float xAxis;
-    float speed=10f;
+    public static float speed=10f;
 
     private void Awake()
     {
         playerInputs = new PlayerInputs();
-        spawnObject = ObjectPooling.Instance;
-        
     }
+
     private void Start()
     {
-       
         playerInputs.PlayerMovement.Movement.performed += OnMoveX;
 
         playerInputs.PlayerMovement.Fire.started += OnFire;
         playerInputs.PlayerMovement.Fire.canceled += OffFire;
-  
     }
 
     private void Update()
@@ -66,7 +61,7 @@ public class PlayerController : MonoBehaviour
 
     void Fire()
     {
-        bullet= spawnObject.GetSpawnObject("Bullet", transform.GetChild(1).transform.position, Quaternion.identity);
+        bullet= ObjectPooling.Instance.GetSpawnObject("Bullet", transform.GetChild(1).transform.position, Quaternion.identity);
         bulletRb= bullet.GetComponent<Rigidbody>();
         bulletRb.AddForce(Vector3.back*bulletForce);
         //Debug.Log("Ateş ediliyor");
