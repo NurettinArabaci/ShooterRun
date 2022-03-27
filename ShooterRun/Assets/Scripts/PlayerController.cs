@@ -13,9 +13,9 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody bulletRb;
 
-    int bulletForce = 100;
+    int bulletForce = 40;
 
-    float limitX=10f;
+    float limitX=11f;
     float xAxis;
     float speed=10f;
 
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
         {
             xAxis = context.ReadValue<float>();
             transform.position -= new Vector3(xAxis / 6, 0, 0);
-            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -limitX, limitX), transform.position.y, transform.position.z);  
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -limitX, limitX+1), transform.position.y, transform.position.z);  
         }
 
     }

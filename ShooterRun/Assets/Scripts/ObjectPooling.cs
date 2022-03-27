@@ -9,8 +9,10 @@ public class ObjectPooling : MonoBehaviour
     public class Pool
     {
         public string objectTag;
+        public Transform parent;
         public int size;
         public GameObject prefab;
+        
         
     }
 
@@ -34,7 +36,7 @@ public class ObjectPooling : MonoBehaviour
 
             for (int i = 0; i < item.size; i++)
             {
-                GameObject obj = Instantiate(item.prefab,transform);
+                GameObject obj = Instantiate(item.prefab,item.parent);
                 obj.SetActive(false);
                 objectPool.Enqueue(obj);
             }

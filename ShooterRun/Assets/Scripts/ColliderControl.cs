@@ -18,9 +18,11 @@ public class ColliderControl : MonoBehaviour
         {
             objectPooling.BackToPool(transform.gameObject, "Bullet");
             other.transform.GetChild(0).GetComponent<Animator>().SetBool("die", true);
-            other.GetComponent<BoxCollider>().enabled = false;
+
             other.GetComponent<NavMeshFollow>().enabled = false;
-            other.GetComponent<NavMeshAgent>().enabled = false;
+            other.GetComponent<NavMeshAgent>().enabled=false;
+
+            other.tag = "DeathEnemy";
 
 
         }
