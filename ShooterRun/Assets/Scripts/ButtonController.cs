@@ -7,7 +7,7 @@ public class ButtonController : MonoBehaviour
 {
     [HideInInspector]
     public Button playBut, restartBut, nextLevelBut;
-
+    [HideInInspector] public Text scoreText;
     public GameObject player,enemiesParent;
     [SerializeField] Text levelText;
     public static ButtonController Instance;
@@ -20,7 +20,9 @@ public class ButtonController : MonoBehaviour
 
         colliderController = player.GetComponent<ColliderController>();
         ButtonReference();
+        scoreText = transform.GetChild(3).GetChild(0).GetComponent<Text>();
     }
+
     private void Start()
     {
         levelText.GetComponent<Text>().text = "Level " + (PlayerPrefs.GetInt("Level")+1).ToString();
@@ -44,6 +46,7 @@ public class ButtonController : MonoBehaviour
     {
         LevelController.Instance.NextLevelButton();
         nextLevelBut.gameObject.SetActive(false);
+        BulletController.scoreAmount = 0;
 
     }
 
@@ -52,5 +55,6 @@ public class ButtonController : MonoBehaviour
         playBut = transform.GetChild(0).GetComponent<Button>();
         nextLevelBut = transform.GetChild(1).GetComponent<Button>();
         restartBut = transform.GetChild(2).GetComponent<Button>();
+
     }
 }

@@ -39,7 +39,6 @@ public class ColliderController : MonoBehaviour
             transform.GetChild(0).GetComponent<Animator>().SetBool("dance", true);
 
             LevelController.Instance.LevelCompleted();
-
         }
         
     }

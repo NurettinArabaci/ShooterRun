@@ -430,9 +430,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelPrefabs:
-  - {fileID: 9015073257001351493, guid: f6dd91e87a96645058315130341d8eb5, type: 3}
-  - {fileID: 8620292284031249441, guid: 5ec0796999b764b81b96d9d877049e96, type: 3}
-  - {fileID: 8620292284031249441, guid: 6fd3ddc190ac94fd181f9ac96ebb7465, type: 3}
+  - {fileID: 5904288817171738752, guid: f6dd91e87a96645058315130341d8eb5, type: 3}
+  - {fileID: 3432575483769019106, guid: 5ec0796999b764b81b96d9d877049e96, type: 3}
+  - {fileID: 77479323333869821, guid: 6fd3ddc190ac94fd181f9ac96ebb7465, type: 3}
   levelNumber: 0
 --- !u!4 &2058073552
 Transform:

@@ -7,6 +7,8 @@ public class BulletController : MonoBehaviour
 {
     ObjectPooling objectPooling;
 
+    public static int scoreAmount = 0;
+
     private void Awake()
     {
         objectPooling = ObjectPooling.Instance;
@@ -21,7 +23,8 @@ public class BulletController : MonoBehaviour
 
             ComponentChange(other.gameObject, false,"DeathEnemy");
 
-            
+            scoreAmount++;
+            ButtonController.Instance.scoreText.text = scoreAmount.ToString();
         }
 
         else if (other.tag == "Ground")
