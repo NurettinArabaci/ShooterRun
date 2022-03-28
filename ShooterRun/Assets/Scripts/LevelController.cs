@@ -49,7 +49,7 @@ public class LevelController : MonoBehaviour
 
     public void LevelCreate()
     {
-        Instantiate(levelPrefabs[levelNumber]);
+        Instantiate(levelPrefabs[levelNumber%(levelPrefabs.Length)]);
     }
 
 
