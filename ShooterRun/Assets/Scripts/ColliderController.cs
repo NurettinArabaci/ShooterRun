@@ -29,6 +29,7 @@ public class ColliderController : MonoBehaviour
 
             ButtonController.Instance.restartBut.gameObject.SetActive(true);
         }
+
         else if (other.tag=="Finish")
         {
             

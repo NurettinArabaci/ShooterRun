@@ -28,7 +28,7 @@ public class LevelController : MonoBehaviour
         levelNumber++;
         PlayerPrefs.SetInt("Level", levelNumber);
 
-        Invoke(nameof(OpenLevelCompleteButton), 4f);
+        Invoke(nameof(OpenLevelCompleteButton), 1.5f);
     }
 
     public void RestartLevelButton()

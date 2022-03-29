@@ -12,6 +12,7 @@ public class ButtonController : MonoBehaviour
 
     public GameObject player,enemiesParent;
     [SerializeField] Text levelText;
+
     public static ButtonController Instance;
 
     ColliderController colliderController;
@@ -39,6 +40,7 @@ public class ButtonController : MonoBehaviour
     {
         restartBut.gameObject.SetActive(false);
         LevelController.Instance.RestartLevelButton();
+        BulletController.scoreAmount = 0;
 
     }
 
