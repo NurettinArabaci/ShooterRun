@@ -7,7 +7,9 @@ public class ButtonController : MonoBehaviour
 {
     [HideInInspector]
     public Button playBut, restartBut, nextLevelBut;
-    [HideInInspector] public Text scoreText;
+
+    public Text scoreText,totalScore;
+
     public GameObject player,enemiesParent;
     [SerializeField] Text levelText;
     public static ButtonController Instance;
@@ -19,8 +21,7 @@ public class ButtonController : MonoBehaviour
         Instance = this;
 
         colliderController = player.GetComponent<ColliderController>();
-        ButtonReference();
-        scoreText = transform.GetChild(3).GetChild(0).GetComponent<Text>();
+        ButtonReference();     
     }
 
     private void Start()
@@ -36,7 +37,6 @@ public class ButtonController : MonoBehaviour
 
     public void RestartButton()
     {
-        //Leveli yeniden yükle
         restartBut.gameObject.SetActive(false);
         LevelController.Instance.RestartLevelButton();
 

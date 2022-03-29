@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 using Cinemachine;
 
 public class ColliderController : MonoBehaviour
@@ -39,6 +40,11 @@ public class ColliderController : MonoBehaviour
             transform.GetChild(0).GetComponent<Animator>().SetBool("dance", true);
 
             LevelController.Instance.LevelCompleted();
+
+            PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + BulletController.scoreAmount);
+
+            ButtonController.Instance.totalScore.text = PlayerPrefs.GetInt("Score").ToString();
+            ButtonController.Instance.scoreText.transform.parent.gameObject.SetActive(false);
         }
         
     }

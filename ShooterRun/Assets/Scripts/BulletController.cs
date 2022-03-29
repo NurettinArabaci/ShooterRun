@@ -14,6 +14,11 @@ public class BulletController : MonoBehaviour
         objectPooling = ObjectPooling.Instance;
     }
 
+    private void Start()
+    {
+        PlayerPrefs.GetInt("Score", 0);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Enemy")
